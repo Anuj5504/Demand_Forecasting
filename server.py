@@ -7,9 +7,9 @@ from datetime import datetime, timedelta
 import requests
 
 app = Flask(__name__)
-CORS(app)
+CORS(app, resources={r"/*": {"origins": ["http://localhost:5173", "https://healthsetu.netlify.app"]}})
 
-API_URL = "http://localhost:5000/api/prescriptions/getallprescription"
+API_URL = "https://hm-0023-mle-y9wl1.vercel.app/api/prescriptions/getallprescription"
 
 def analyze_demand_trends(data):
     """Analyze demand trends and patterns"""
